@@ -288,8 +288,8 @@ async def mentionall(event):
     
 @client.on(events.NewMessage(pattern='^/botcum'))
 async def event(ups):
-  if ups.sender_id == 5240752777:
-   await ups.reply("**armanç Sahibim Naber Ben Çalışıyorum ❤️🥵**")
+  if ups.sender_id == 6076070444:
+   await ups.reply("**hamza Sahibim Naber Ben Çalışıyorum ❤️🥵**")
   elif ups.sender_id == 2008032694:
     await ups.reply("**rıdvan Sahibim Naber Ben Çalışıyorum 🖤🥵**")
   elif ups.sender_id ==  5241184040:
