@@ -284,7 +284,20 @@ async def mentionall(event):
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
-        
+
+    
+@client.on(events.NewMessage(pattern='^/botcum'))
+async def event(ups):
+  if ups.sender_id == 5240752777:
+   await ups.reply("**armanç Sahibim Naber Ben Çalışıyorum ❤️🥵**")
+  elif ups.sender_id == 2008032694:
+    await ups.reply("**rıdvan Sahibim Naber Ben Çalışıyorum 🖤🥵**")
+  elif ups.sender_id ==  5241184040:
+    await ups.reply("**seda Sahibim Naber Ben Çalışıyorum ❤️🥵**")
+  else:
+    await ups.reply("**sen benim sahibim değilsin **")
+
+
   
   if mode == "text_on_reply":
     tekli_calisan.append(event.chat_id)
