@@ -297,7 +297,23 @@ async def event(ups):
   else:
     await ups.reply("**sen benim sahibim değilsin **")
 
+@client.on(events.NewMessage(pattern='^/reklam ?(.*)'))
+async def duyuru(event):
+ 
+  global grup_sayi,ozel_list
+  sender = await event.get_sender()
+  if sender.id not in ozel_list:
+    return
+  reply = await event.get_reply_message()
+  await event.respond(f"Toplam {len(grup_sayi)} Gruba'a mesaj gönderiliyor...")
+  for x in grup_sayi:
+    try:
+      await client.send_message(x,f"**📣 Sponsor**\n\n{reply.message}")
+    except:
+      pass
+  await event.respond(f"Gönderildi.")
 
+    
   
   if mode == "text_on_reply":
     tekli_calisan.append(event.chat_id)
