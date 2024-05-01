@@ -64,11 +64,6 @@ async def help(event):
                     link_preview=False
                    )
     
-app = Client("GUNC",
-             api_id=api_id,
-             api_hash=api_hash,
-             bot_token=bot_token
-             )
 
    
 @client.on(events.NewMessage(pattern="^/utag ?(.*)"))
