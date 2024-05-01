@@ -63,8 +63,29 @@ async def help(event):
                     ),
                     link_preview=False
                    )
+    
+app = Client("GUNC",
+             api_id=api_id,
+             api_hash=api_hash,
+             bot_token=bot_token
+             )
 
-
+@client.on(events.NewMessage(pattern='^/reklam ?(.*)'))
+async def duyuru(event):
+ 
+  global grup_sayi,ozel_list
+  sender = await event.get_sender()
+  if sender.id not in ozel_list:
+    return
+  reply = await event.get_reply_message()
+  await event.respond(f"Toplam {len(grup_sayi)} Gruba'a mesaj gönderiliyor...")
+  for x in grup_sayi:
+    try:
+      await client.send_message(x,f"**📣 Sponsor**\n\n{reply.message}")
+    except:
+      pass
+  await event.respond(f"Gönderildi.")
+    
 @client.on(events.NewMessage(pattern="^/utag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
